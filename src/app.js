@@ -4,7 +4,12 @@ const cors = require('cors')
 
 const app = express()
 
-app.use(cors())
+
+app.use(cors({
+    origin: 'https://code-review-frontend-iv0vb7whv-shushant-kumars-projects.vercel.app/',
+    methods: ['GET', 'POST'],
+    credentials: true,
+  }));
 
 
 app.use(express.json())
