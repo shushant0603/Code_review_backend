@@ -7,7 +7,11 @@ const app = express()
 app.use(cors())
 
 
-app.use(express.json())
+app.use(cors({
+    origin: 'https://code-review-frontend-shushant-kumars-projects.vercel.app/',
+    methods: ['GET', 'POST'],
+    credentials: true,
+  }));
 
 app.get('/', (req, res) => {
     res.send('Hello World')
